@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Filson-Bold';
+  src: url('../../../src/fonts/Filson-Bold.ttf') format('truetype');
+}
+
+* {
+  white-space: nowrap;
+}
+.app-heading {
+  width: 100%;
+  text-align: center;
+  font-family: 'Filson-Bold';
+  font-size: 35px;
+}
