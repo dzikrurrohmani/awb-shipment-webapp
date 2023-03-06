@@ -1,7 +1,7 @@
-import AwbService from './AwbServices';
+import AwbServices from './AwbServices';
 
 export const ServiceFactory = (apiClient: any) => {
   return {
-    AwbService: AwbService(apiClient),
+    AwbServices: AwbServices(apiClient),
   };
 };

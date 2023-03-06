@@ -1,11 +1,13 @@
 import './AwbListView.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { transaksi } from '../../data';
+import { Link, useNavigate } from 'react-router-dom';
+import UseAwbList from './UseAwbList';
+
+import React from 'react';
 
 const AwbListView = () => {
-  const [page, setPage] = useState(1);
-  const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
+  const { page, awbList, onPrintAwb } = UseAwbList();
   return (
     <div style={{ margin: '0px 35px', fontFamily: 'Poppins-Regular' }}>
       <div className="app-heading">AWB List</div>
@@ -24,25 +26,19 @@ const AwbListView = () => {
               </tr>
             </thead>
             <tbody className="table-group-divider">
-              {transaksi.map((trx) => {
+              {awbList.map((trx) => {
                 return (
                   <tr key={trx.awb_number}>
                     <td>{trx.awb_number}</td>
                     <td>{trx.awb_number}</td>
                     <td>{trx.awb_number}</td>
                     <td>
-                      <Link
-                        className="detail text-white"
-                        to={'/home/ticket-detail'}
-                        state={{
-                          ticketId: 'ticket.ticketId',
-                          origin: 'assigned-to-me',
-                        }}
+                      <button
+                        className="btn btn-outline-secondary btn-sm"
+                        onClick={() => onPrintAwb(trx.awb_number)}
                       >
-                        <button className="btn btn-outline-secondary btn-sm">
-                          Detail
-                        </button>
-                      </Link>
+                        Detail
+                      </button>
                     </td>
                   </tr>
                 );
@@ -77,7 +73,7 @@ const AwbListView = () => {
               {page}
             </a>
           </li>
-          {transaksi.length >= 10 && (
+          {awbList.length >= 10 && (
             <li className="page-item" onClick={() => {}}>
               <a className="page-link" href="#" aria-label="Next">
                 <span aria-hidden="true" style={{ color: '#6c757d' }}>

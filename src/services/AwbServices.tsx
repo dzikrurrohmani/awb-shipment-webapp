@@ -3,11 +3,11 @@ interface Props {
   doGet: any;
 }
 
-const AwbService = ({ doPost, doGet }: Props) => {
-  const getAwbAll = async (
+const AwbServices = ({ doPost, doGet }: Props) => {
+  const getAwbList = async (
     courier_code: string,
-    page = 1,
-    itemPerPage = 15
+    page: number,
+    itemPerPage: number
   ) => {
     try {
       return await doPost({
@@ -37,9 +37,9 @@ const AwbService = ({ doPost, doGet }: Props) => {
     }
   };
   return {
-    getAwbAll,
+    getAwbList,
     getAwbDetail,
   };
 };
 
-export default AwbService;
+export default AwbServices;

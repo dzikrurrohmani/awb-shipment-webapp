@@ -1,4 +1,6 @@
-const apiClientFactory = (axiosClient:any) => {
+import { AxiosInstance } from "axios";
+
+const apiClientFactory = (axiosClient:AxiosInstance) => {
   const doPost = async ({ url = '', data = null }) => {
     try {
       const response = await axiosClient.post(url, data);
@@ -8,9 +10,9 @@ const apiClientFactory = (axiosClient:any) => {
     }
   };
 
-  const doGet = async ({ url = '' }) => {
+  const doGet = async ({ url = '', params={} }) => {
     try {
-      const response = await axiosClient.get(url);
+      const response = await axiosClient.get(url,{params:params});
       return response.data;
     } catch (error) {
       throw error;
@@ -26,9 +28,9 @@ const apiClientFactory = (axiosClient:any) => {
     }
   };
 
-  const doDelete = async ({ url = '', data = null }) => {
+  const doDelete = async ({ url = ''}) => {
     try {
-      const response = await axiosClient.delete(url, data);
+      const response = await axiosClient.delete(url);
       return response.data;
     } catch (error) {
       throw error;
