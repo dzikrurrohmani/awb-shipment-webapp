@@ -1,0 +1,70 @@
+.awb-detail {
+  margin-top: 50px;
+  width: 500px;
+}
+
+.awb-logo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.awb-service {
+  font-size: 15px;
+}
+
+.awb-parcel {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding-left: 60px;
+}
+
+.awb-parcel-list {
+  width: 130px;
+  text-align: left;
+}
+
+.awb-qr-code {
+  vertical-align: middle;
+  width: 45%;
+}
+
+.awb-receiver,
+.awb-shipper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 13px;
+  width: 49%;
+  text-align: left;
+}
+
+.awb-identity {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.awb-note {
+  margin: 0 10px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.awb-info {
+  align-self: center;
+  height: 100px;
+}
+
+p {
+  margin-bottom: 8px !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}

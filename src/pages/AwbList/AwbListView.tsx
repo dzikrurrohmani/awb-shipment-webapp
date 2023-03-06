@@ -1,23 +1,18 @@
 import './AwbListView.css';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import UseAwbList from './UseAwbList';
 
 import React from 'react';
 
 const AwbListView = () => {
-  const navigate = useNavigate();
-  const { page, awbList, onPrintAwb } = UseAwbList();
+  const { page, awbList, itemPerPage, onPrintAwb, onNextPage, onPrevPage } =
+    UseAwbList();
   return (
-    <div style={{ margin: '0px 35px', fontFamily: 'Poppins-Regular' }}>
+    <div className="awb-list">
       <div className="app-heading">AWB List</div>
       <div className="table-responsive">
-        <div className="text-center" style={{ minWidth: '880px' }}>
+        <div className="text-center">
           <table className="table table-striped border-start border-end">
-            <thead
-              className="table-group-divider"
-              style={{ fontFamily: 'Poppins-Bold' }}
-            >
+            <thead className="table-group-divider">
               <tr>
                 <th>Nomor AWB</th>
                 <th>Service</th>
@@ -62,7 +57,12 @@ const AwbListView = () => {
       <div className="d-flex justify-content-center">
         <ul className="pagination">
           {page !== 1 && (
-            <li className="page-item" onClick={() => {}}>
+            <li
+              className="page-item"
+              onClick={() => {
+                onPrevPage();
+              }}
+            >
               <a className="page-link" href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
               </a>
@@ -73,12 +73,15 @@ const AwbListView = () => {
               {page}
             </a>
           </li>
-          {awbList.length >= 10 && (
-            <li className="page-item" onClick={() => {}}>
+          {awbList.length >= itemPerPage && (
+            <li
+              className="page-item"
+              onClick={() => {
+                onNextPage();
+              }}
+            >
               <a className="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true" style={{ color: '#6c757d' }}>
-                  &raquo;
-                </span>
+                <span aria-hidden="true">&raquo;</span>
               </a>
             </li>
           )}
