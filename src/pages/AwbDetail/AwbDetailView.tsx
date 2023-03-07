@@ -40,21 +40,31 @@ const AwbDetailView = () => {
             <td rowSpan={3} className="awb-qr-code">
               <QRCode value={awbDetail.order_id} size={110} />
             </td>
-            <td className="awb-parcel">
-              <div>Asuransi</div>
-              <div className="awb-parcel-list">: {awbDetail.insurance_fee}</div>
+            <td>
+              <div className="awb-parcel">
+                <div>Asuransi</div>
+                <div className="awb-parcel-list">
+                  : {awbDetail.insurance_fee}
+                </div>
+              </div>
             </td>
           </tr>
           <tr>
-            <td className="awb-parcel">
-              <div>Berat</div>
-              <div className="awb-parcel-list">: {awbDetail.weight_gr} gr</div>
+            <td>
+              <div className="awb-parcel">
+                <div>Berat</div>
+                <div className="awb-parcel-list">
+                  : {awbDetail.weight_gr} gr
+                </div>
+              </div>
             </td>
           </tr>
           <tr>
-            <td className="awb-parcel">
-              <div>Quantity</div>
-              <div className="awb-parcel-list">: {awbDetail.qty}</div>
+            <td>
+              <div className="awb-parcel">
+                <div>Quantity</div>
+                <div className="awb-parcel-list">: {awbDetail.qty}</div>
+              </div>
             </td>
           </tr>
           <tr>

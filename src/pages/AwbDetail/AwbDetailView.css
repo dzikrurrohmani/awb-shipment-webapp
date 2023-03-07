@@ -19,7 +19,6 @@
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  padding-left: 60px;
 }
 
 .awb-parcel-list {
@@ -61,10 +60,15 @@
   height: 100px;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
 p {
   margin-bottom: 8px !important;
 }
 
-.text-bold {
-  font-weight: bold;
+td {
+  border-width: 1px !important;
+  border-color: black !important;
 }
