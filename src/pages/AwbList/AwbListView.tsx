@@ -25,8 +25,8 @@ const AwbListView = () => {
                 return (
                   <tr key={trx.awb_number}>
                     <td>{trx.awb_number}</td>
-                    <td>{trx.awb_number}</td>
-                    <td>{trx.awb_number}</td>
+                    <td>{trx.service_code}</td>
+                    <td>{trx.order_id}</td>
                     <td>
                       <button
                         className="btn btn-outline-secondary btn-sm"

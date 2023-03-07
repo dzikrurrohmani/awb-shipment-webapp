@@ -8,7 +8,7 @@ const UseAwbList = () => {
   const [page, setPage] = useState(1);
   const [itemPerPage, setItemPerPage] = useState(13);
   const [courier, setCourier] = useState('SICEPAT');
-  const [awbList, setAwbList] = useState<{ awb_number: string }[]>([]);
+  const [awbList, setAwbList] = useState<{ awb_number: string, service_code: string, order_id: string }[]>([]);
 
   const onGetAwbList = async () => {
     try {
